@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import Label from "../UI/Input/Label";
+import Input from "../UI/Input/Input";
 import Actions from "./Actions/Actions";
 
 import styles from "./Form.module.css";
@@ -36,8 +38,8 @@ const Form = (props) => {
     <form onSubmit={submitHandler} className={styles.form}>
       <div className={styles["input-group"]}>
         <p>
-          <label htmlFor="current-savings">Current Savings ($)</label>
-          <input
+          <Label htmlFor="current-savings">Current Savings ($)</Label>
+          <Input
             onChange={(event) =>
               inputChangeHandler("current-savings", event.target.value)
             }
@@ -47,8 +49,8 @@ const Form = (props) => {
           />
         </p>
         <p>
-          <label htmlFor="yearly-contribution">Yearly Savings ($)</label>
-          <input
+          <Label htmlFor="yearly-contribution">Yearly Savings ($)</Label>
+          <Input
             onChange={(event) =>
               inputChangeHandler("yearly-contribution", event.target.value)
             }
@@ -60,10 +62,10 @@ const Form = (props) => {
       </div>
       <div className={styles["input-group"]}>
         <p>
-          <label htmlFor="expected-return">
+          <Label htmlFor="expected-return">
             Expected Interest (%, per year)
-          </label>
-          <input
+          </Label>
+          <Input
             onChange={(event) =>
               inputChangeHandler("expected-return", event.target.value)
             }
@@ -73,8 +75,8 @@ const Form = (props) => {
           />
         </p>
         <p>
-          <label htmlFor="duration">Investment Duration (years)</label>
-          <input
+          <Label htmlFor="duration">Investment Duration (years)</Label>
+          <Input
             onChange={(event) =>
               inputChangeHandler("duration", event.target.value)
             }
