@@ -1,8 +1,17 @@
 import React from "react";
 
-const Button = (props) => {
+import styles from "./Button.module.css";
 
-    return ();
-}
+const Button = (props) => {
+  return (
+    <button
+      type={props.type}
+      onClick={props.onClick}
+      className={props.isAlt ? styles.buttonAlt : styles.button}
+    >
+      {props.children}
+    </button>
+  );
+};
 
 export default Button;

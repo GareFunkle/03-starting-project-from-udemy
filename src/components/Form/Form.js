@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import Actions from "./Actions/Actions";
+
 import styles from "./Form.module.css";
 
 const Form = (props) => {
@@ -82,18 +84,7 @@ const Form = (props) => {
           />
         </p>
       </div>
-      <p className={styles.actions}>
-        <button
-          onClick={resetHandler}
-          type="reset"
-          className={styles.buttonAlt}
-        >
-          Reset
-        </button>
-        <button type="submit" className={styles.button}>
-          Calculate
-        </button>
-      </p>
+      <Actions resetAllInput={resetHandler} calculateAllInput={"submit"} />
     </form>
   );
 };
