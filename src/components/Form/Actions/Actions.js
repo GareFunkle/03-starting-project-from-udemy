@@ -2,7 +2,7 @@ import React from "react";
 
 import Button from "../../UI/Button/Button";
 
-import styles from "./Action.module.css";
+import styles from "./Actions.module.css";
 
 const Actions = (props) => {
   return (

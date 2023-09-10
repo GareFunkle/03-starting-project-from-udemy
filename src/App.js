@@ -18,13 +18,6 @@ function App() {
     const expectedReturn = +userInput["expected-return"] / 100;
     const duration = +userInput["duration"];
 
-    console.log({
-      currentSavings,
-      yearlyContribution,
-      expectedReturn,
-      duration,
-    }); // log pour déboguer
-
     for (let i = 0; i < duration; i++) {
       const yearlyInterest = currentSavings * expectedReturn;
       currentSavings += yearlyInterest + yearlyContribution;
@@ -37,13 +30,13 @@ function App() {
     }
   }
 
-  console.log(yearlyData); // log pour déboguer
-
   return (
     <div>
       <Header />
       <Form onCalculate={calculateHandler} />
-      {!userInput && <p>No investement calculated yet.</p>}
+      {!userInput && (
+        <p style={{ textAlign: "center" }}>No investement calculated yet.</p>
+      )}
       {userInput && (
         <Results
           data={yearlyData}

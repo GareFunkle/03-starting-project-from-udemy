@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import Label from "../UI/Input/Label";
-import Input from "../UI/Input/Input";
 import Actions from "./Actions/Actions";
 
 import styles from "./Form.module.css";
@@ -29,7 +27,7 @@ const Form = (props) => {
     setUserInput((prevInput) => {
       return {
         ...prevInput,
-        [input]: value,
+        [input]: +value,
       };
     });
   };
@@ -38,8 +36,8 @@ const Form = (props) => {
     <form onSubmit={submitHandler} className={styles.form}>
       <div className={styles["input-group"]}>
         <p>
-          <Label htmlFor="current-savings">Current Savings ($)</Label>
-          <Input
+          <label htmlFor="current-savings">Current Savings ($)</label>
+          <input
             onChange={(event) =>
               inputChangeHandler("current-savings", event.target.value)
             }
@@ -49,8 +47,8 @@ const Form = (props) => {
           />
         </p>
         <p>
-          <Label htmlFor="yearly-contribution">Yearly Savings ($)</Label>
-          <Input
+          <label htmlFor="yearly-contribution">Yearly Savings ($)</label>
+          <input
             onChange={(event) =>
               inputChangeHandler("yearly-contribution", event.target.value)
             }
@@ -62,10 +60,10 @@ const Form = (props) => {
       </div>
       <div className={styles["input-group"]}>
         <p>
-          <Label htmlFor="expected-return">
+          <label htmlFor="expected-return">
             Expected Interest (%, per year)
-          </Label>
-          <Input
+          </label>
+          <input
             onChange={(event) =>
               inputChangeHandler("expected-return", event.target.value)
             }
@@ -75,8 +73,8 @@ const Form = (props) => {
           />
         </p>
         <p>
-          <Label htmlFor="duration">Investment Duration (years)</Label>
-          <Input
+          <label htmlFor="duration">Investment Duration (years)</label>
+          <input
             onChange={(event) =>
               inputChangeHandler("duration", event.target.value)
             }
